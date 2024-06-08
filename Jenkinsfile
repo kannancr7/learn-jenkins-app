@@ -3,7 +3,15 @@ pipeline{
     stages{
         stage('build'){
             steps{
-            echo 'hello'
+            sh '''
+            ls -la
+            npm -v
+            node -v
+            npm ci
+            npm run build
+            ls -la
+
+            '''
             }
         }
     
